@@ -1,4 +1,4 @@
-const { MongoClient, Db } = require('mongodb')
+const { MongoClient } = require('mongodb')
 const url = 'mongodb://localhost:27017';
 const client = new MongoClient(url);
 const dataBase = 'e-com'
