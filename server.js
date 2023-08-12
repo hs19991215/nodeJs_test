@@ -7,13 +7,14 @@ const dbConnect = require('./mongoDb')
 const main = async () => {
     let data = await dbConnect()
     data = await data.find().toArray()
-    console.warn(data)
+    console.log(data)
 }
 main();
 
-app.get('/', (req, res,) => {
-    res.send("Welcome to the Home page")
-    console.log(req)
+app.get('/data', async (req, res,) => {
+    let data = await dbConnect()
+    data = await data.find().toArray()
+    res.send(data)
 })
 
 app.listen(5000);
